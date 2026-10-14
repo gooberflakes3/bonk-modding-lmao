@@ -10570,12 +10570,12 @@ class CanvasHandler {
 		const aspectRatio = this.domLastWidth / this.domLastHeight;
 		let resWidth = 0;
 		let resHeight = 0;
-		if (aspectRatio > 1.46) {
+		if (aspectRatio > 2) { // 1.46
 			resHeight = this.domLastHeight;
-			resWidth = resHeight * 1.46
+			resWidth = resHeight * 2 // 1.46
 		} else {
 			resWidth = this.domLastWidth;
-			resHeight = resWidth / 1.46
+			resHeight = resWidth / 2 // 1.46
 		}
 		this.scaleRatio = resWidth / 730;
 		this.renderer.resize(resWidth, resHeight);
@@ -16819,12 +16819,12 @@ function GraphicsHandler(canvas, type) {
 				resWidth = resHeight * 1.46
 			}
 		} else {
-			if (aspectRatio > 1.46) {
+			if (aspectRatio > 2) { // 1.46
 				resHeight = canvasOffsetHeight;
-				resWidth = resHeight * 1.46
+				resWidth = resHeight * 2 // 1.46
 			} else {
 				resWidth = canvasOffsetWidth;
-				resHeight = resWidth / 1.46
+				resHeight = resWidth / 2 // 1.46
 			}
 		}
 		scale = resWidth / 730;
@@ -27713,12 +27713,12 @@ function FootballCanvasHandler(canvas) {
 		let width = 0;
 		let height = 0;
 		let scale = 0;
-		if (aspectRatio > 1.46) {
+		if (aspectRatio > 2) { // 1.46
 			height = canvasOffsetHeight;
-			width = height * 1.46
+			width = height * 2 // 1.46
 		} else {
 			width = canvasOffsetWidth;
-			height = width / 1.46
+			height = width / 2 // 1.46
 		}
 		width -= 10;
 		height -= 10;
@@ -29341,7 +29341,7 @@ game.resizeGame = function() {
 	const aspectRatio = desiredWidth / desiredHeight;
 	let newWidth = 0;
 	let newHeight = 0;
-	if (aspectRatio > 1.46) {
+	if (aspectRatio > 2) { // 1.46
 		newHeight = desiredHeight;
 		newWidth = newHeight * 2 // 1.46
 	} else {
