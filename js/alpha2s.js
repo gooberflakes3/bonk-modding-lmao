@@ -29343,10 +29343,10 @@ game.resizeGame = function() {
 	let newHeight = 0;
 	if (aspectRatio > 1.46) {
 		newHeight = desiredHeight;
-		newWidth = newHeight * 1.46
+		newWidth = newHeight * 2 // 1.46
 	} else {
 		newWidth = desiredWidth;
-		newHeight = newWidth / 1.46
+		newHeight = newWidth / 2 // 1.46
 	}
 	const pageFrame = parent.document.getElementById("maingameframe");
 	const pageLeftAd = parent.document.getElementById("adboxverticalleftCurse");
