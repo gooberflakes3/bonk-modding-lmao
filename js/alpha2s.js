@@ -777,6 +777,7 @@ function IngameManager(info, token) {
 	function unfavoriteMap() {
 		if (game.guest == false && game_.map.m.dbv == 2 && game_.map.m.dbid > 0) {
 			$.post("https://bonk2.io/scripts/map_fave.php", {
+				headers: {'Access-Control-Allow-Origin': '*'},
 				token: currentToken,
 				mapid: game_.map.m.dbid,
 				action: "u"
@@ -1815,6 +1816,7 @@ function IngameManager(info, token) {
 	function favoriteMap() {
 		if (game.guest == false && game_.map.m.dbv == 2 && game_.map.m.dbid > 0) {
 			$.post("https://bonk2.io/scripts/map_fave.php", {
+				headers: {'Access-Control-Allow-Origin': '*'},
 				token: currentToken,
 				mapid: game_.map.m.dbid,
 				action: "f"
@@ -2520,6 +2522,7 @@ function RoomList() {
 			gl = "y"
 		}
 		$.post("https://bonk2.io/scripts/getrooms.php", {
+			headers: {'Access-Control-Allow-Origin': '*'},
 			version: game.version,
 			gl: gl,
 			token: currentToken
@@ -5678,6 +5681,7 @@ function ReplayRenderer() {
 		}
 		isFetchingReplays = true;
 		const replayFetchPayload = {
+			headers: {'Access-Control-Allow-Origin': '*'},
 			version: game.version,
 			offset: replayOffset
 		};
@@ -5854,6 +5858,7 @@ function ReplayRenderer() {
 	};
 	this.reportReplay = function() {
 		$.post("https://bonk2.io/scripts/replay_report.php", {
+			headers: {'Access-Control-Allow-Origin': '*'},
 			replayid: currentReplay.id
 		});
 		replays.splice(replayIndex, 1);
@@ -12431,6 +12436,7 @@ function MainMenu() {
 		el_registerfieldtip.style.visibility = "hidden";
 		game.activateButtonSpinner(el_registerwindow_submitbutton);
 		$.post("https://bonk2.io/scripts/register_legacy.php", {
+			headers: {'Access-Control-Allow-Origin': '*'},
 			username: el_registerwindow_username.value,
 			password: el_registerwindow_password.value,
 			remember: el_registerwindow_remember_checkbox.checked
@@ -12664,6 +12670,7 @@ function MainMenu() {
 		el_registerfieldtip.style.visibility = "hidden";
 		game.activateButtonSpinner(el_loginwindow_submitbutton);
 		$.post("https://bonk2.io/scripts/login_legacy.php", {
+			headers: {'Access-Control-Allow-Origin': '*'},
 			username: el_loginwindow_username.value,
 			password: el_loginwindow_password.value,
 			remember: el_loginwindow_remember_checkbox.checked
@@ -12760,6 +12767,7 @@ function MainMenu() {
 			return
 		}
 		$.post("https://bonk2.io/scripts/account_changepassword.php", {
+			headers: {'Access-Control-Allow-Origin': '*'},
 			token: token,
 			oldpass: el_passwordChange_oldpass.value,
 			newpass: el_passwordChange_newpass1.value
@@ -12826,6 +12834,7 @@ function MainMenu() {
 			return
 		}
 		$.post("https://bonk2.io/scripts/friends.php", {
+			headers: {'Access-Control-Allow-Origin': '*'},
 			token: token,
 			task: "deleterequest",
 			theirid: this.playerID
@@ -12870,6 +12879,7 @@ function MainMenu() {
 			return
 		}
 		$.post("https://bonk2.io/scripts/map_fave.php", {
+			headers: {'Access-Control-Allow-Origin': '*'},
 			token: token,
 			mapid: currentReplay.mid,
 			action: "f"
@@ -13301,6 +13311,7 @@ function MainMenu() {
 		el_autoLogin_cancelButton.onclick = f602;
 		isAutoLogin = true;
 		$.post("https://bonk2.io/scripts/login_auto.php", {
+			headers: {'Access-Control-Allow-Origin': '*'},
 			rememberToken: rememberToken
 		}).done(e_ => {
 			if (isAutoLogin == false) {
@@ -13507,6 +13518,7 @@ function MainMenu() {
 		f487v29 = f540a0;
 		f487v30 = f540a1;
 		$.post("https://bonk2.io/scripts/getroomaddress.php", {
+			headers: {'Access-Control-Allow-Origin': '*'},
 			id: f540a0
 		}).fail(function() {
 			connectionStatus("Address fetch failed")
@@ -13557,6 +13569,7 @@ function MainMenu() {
 		}
 		game.activateButtonSpinner(el_friends_refresh_button);
 		$.post("https://bonk2.io/scripts/friends.php", {
+			headers: {'Access-Control-Allow-Origin': '*'},
 			token: token,
 			task: "getfriends"
 		}).fail(function() {
@@ -13653,6 +13666,7 @@ function MainMenu() {
 	});
 	function f547() {
 		$.post("https://bonk2.io/scripts/matchmaking_query.php", {
+			headers: {'Access-Control-Allow-Origin': '*'},
 			version: game.version,
 			mode: game.quickMode,
 			excludeaddresses: game.quickExcludeAddresses.join("#"),
@@ -14109,6 +14123,7 @@ function MainMenu() {
 			return
 		}
 		$.post("https://bonk2.io/scripts/friends.php", {
+			headers: {'Access-Control-Allow-Origin': '*'},
 			token: token,
 			task: "unfriend",
 			theirid: this.playerID
@@ -14141,6 +14156,7 @@ function MainMenu() {
 	function saveControls() {
 		if (game.guest == false) {
 			$.post("https://bonk2.io/scripts/account_savecontrols.php", {
+				headers: {'Access-Control-Allow-Origin': '*'},
 				controls: game.customControls.serialize(),
 				token: token
 			})
@@ -14447,6 +14463,7 @@ function MainMenu() {
 		const f579v0 = el_friendsSendWindow_name.value;
 		game.activateButtonSpinner(el_friendsSendWindow_send);
 		$.post("https://bonk2.io/scripts/friends.php", {
+			headers: {'Access-Control-Allow-Origin': '*'},
 			token: token,
 			task: "send",
 			theirname: f579v0
@@ -14758,6 +14775,7 @@ function MainMenu() {
 	const el_settings_fps_checkbox = document.getElementById("settings_fps_checkbox");
 	function f596() {
 		$.post("https://bonk2.io/scripts/friends.php", {
+			headers: {'Access-Control-Allow-Origin': '*'},
 			token: token,
 			task: "accept",
 			theirid: this.playerID
@@ -14805,6 +14823,7 @@ function MainMenu() {
 			const f599v0 = getRememberToken();
 			if (getRememberToken) {
 				$.post("https://bonk2.io/scripts/login_clearauto.php", {
+					headers: {'Access-Control-Allow-Origin': '*'},
 					rememberToken: f599v0
 				})
 			}
@@ -18928,6 +18947,7 @@ function MapLoadWindow(token) {
 			}
 			hasMoreMaps = false;
 			$.post("https://bonk2.io/scripts/map_getsearch.php", {
+				headers: {'Access-Control-Allow-Origin': '*'},
 				searchauthor: searchAuthor,
 				searchmapname: searchMapName,
 				searchsort: searchSort,
@@ -18945,6 +18965,7 @@ function MapLoadWindow(token) {
 		} else if (searchType == "b2fresh") {
 			hasMoreMaps = false;
 			$.post("https://bonk2.io/scripts/map_getfresh.php", {
+				headers: {'Access-Control-Allow-Origin': '*'},
 				startingfrom: searchOffset * 32
 			}).done(function(e) {
 				hasMoreMaps = true;
@@ -18958,6 +18979,7 @@ function MapLoadWindow(token) {
 		} else if (searchType == "b2favs") {
 			hasMoreMaps = false;
 			$.post("https://bonk2.io/scripts/map_getfave.php", {
+				headers: {'Access-Control-Allow-Origin': '*'},
 				token: currentToken,
 				startingfrom: searchOffset * 32
 			}).done(function(e) {
@@ -19023,6 +19045,7 @@ function MapLoadWindow(token) {
 		} else if (searchType == "b2own") {
 			hasMoreMaps = false;
 			$.post("https://bonk2.io/scripts/map_getown.php", {
+				headers: {'Access-Control-Allow-Origin': '*'},
 				token: currentToken,
 				startingfrom: searchOffset * 30
 			}).done(function(e) {
@@ -19037,6 +19060,7 @@ function MapLoadWindow(token) {
 		} else if (searchType == "favs") {
 			hasMoreMaps = false;
 			$.post("https://bonk2.io/scripts/map_b1_getfave.php", {
+				headers: {'Access-Control-Allow-Origin': '*'},
 				token: currentToken,
 				startingfrom: searchOffset * 32
 			}).done(function(e) {
@@ -19052,6 +19076,7 @@ function MapLoadWindow(token) {
 		} else if (searchType == "authorsown") {
 			hasMoreMaps = false;
 			$.post("https://bonk2.io/scripts/map_b1_getown.php", {
+				headers: {'Access-Control-Allow-Origin': '*'},
 				token: currentToken,
 				startingfrom: searchOffset * 32
 			}).done(function(e) {
@@ -19067,6 +19092,7 @@ function MapLoadWindow(token) {
 		} else if (searchType == "hot") {
 			hasMoreMaps = false;
 			$.post("https://bonk2.io/scripts/map_b1_getbest.php", {
+				headers: {'Access-Control-Allow-Origin': '*'},
 				startingfrom: searchOffset * 32
 			}).done(function(e) {
 				hasMoreMaps = true;
@@ -19080,7 +19106,7 @@ function MapLoadWindow(token) {
 			})
 		} else if (searchType == "search") {
 			hasMoreMaps = false;
-			const f682v10 = {};
+			const f682v10 = {headers: {'Access-Control-Allow-Origin': '*'}};
 			if (sortByType == "BEST") {
 				f682v10.searchsort = "ctr"
 			} else {
@@ -19362,6 +19388,7 @@ function MapLoadWindow(token) {
 						return
 					} else {
 						$.post("https://bonk2.io/scripts/map_delete.php", {
+							headers: {'Access-Control-Allow-Origin': '*'},
 							token: currentToken,
 							mapid: mergedMap.m.dbid
 						});
@@ -19839,6 +19866,7 @@ function MapLoadWindow(token) {
 						return
 					} else {
 						$.post("https://bonk2.io/scripts/map_fave.php", {
+							headers: {'Access-Control-Allow-Origin': '*'},
 							token: currentToken,
 							mapid: mergedMap.m.dbid,
 							action: "u"
@@ -20123,6 +20151,7 @@ function SkinManagerElementHandler() {
 		if (game.guest == false) {
 			const newActiveNumber = game.activeAvatarNumber + 1;
 			$.post("https://bonk2.io/scripts/avatar_update.php", {
+				headers: {'Access-Control-Allow-Origin': '*'},
 				token: token,
 				task: "updateslot",
 				newactive: newActiveNumber
@@ -20228,6 +20257,7 @@ function SkinManagerElementHandler() {
 		if (game.guest == false) {
 			const newSkinNumber = activeAvatarNumber + 1;
 			$.post("https://bonk2.io/scripts/avatar_update.php", {
+				headers: {'Access-Control-Allow-Origin': '*'},
 				token: token,
 				task: "updateavatar",
 				newavatarslot: newSkinNumber,
@@ -20740,6 +20770,7 @@ function Lobby(_networkEngine, playerList, room, token) {
 			f734v8[f778v0] = true
 		}
 		$.post("https://bonk2.io/scripts/friends.php", {
+			headers: {'Access-Control-Allow-Origin': '*'},
 			token: f734v7,
 			task: "send",
 			theirname: f778v0
@@ -21283,6 +21314,7 @@ function Lobby(_networkEngine, playerList, room, token) {
 								} else {
 									f738();
 									$.post("https://bonk2.io/scripts/friends.php", {
+										headers: {'Access-Control-Allow-Origin': '*'},
 										token: f734v7,
 										task: "unfriend",
 										theirid: game.friendNameToID(this.friendName)
@@ -23189,6 +23221,7 @@ function MapEditor(mapLoadWindow_, token_) {
 			}
 			f885v0 = MapParser.encodeToDatabase(world);
 			$.post("https://bonk2.io/scripts/map_save_pub.php", {
+				headers: {'Access-Control-Allow-Origin': '*'},
 				mapname: f885v1,
 				overwriteok: "false",
 				leveldata: f885v0,
@@ -23217,6 +23250,7 @@ function MapEditor(mapLoadWindow_, token_) {
 		el_mapeditor_save_overwrite_window_save.onclick = function() {
 			game.activateButtonSpinner(el_mapeditor_save_overwrite_window_save);
 			$.post("https://bonk2.io/scripts/map_save_pub.php", {
+				headers: {'Access-Control-Allow-Origin': '*'},
 				mapname: f885v1,
 				overwriteok: "true",
 				leveldata: f885v0,
@@ -28205,6 +28239,7 @@ function LobbyHandler(_room, _quickMaps) {
 				}
 				const f1055v6 = f1055v0.toDatabase();
 				$.post("https://bonk2.io/scripts/replay_submit.php", {
+					headers: {'Access-Control-Allow-Origin': '*'},
 					version: game.version,
 					replaydata: f1055v6,
 					mapid: gameSettings.map.m.dbid
@@ -28274,6 +28309,7 @@ function LobbyHandler(_room, _quickMaps) {
 		}
 		const f1056v6 = f1056v0.toDatabase();
 		$.post("https://bonk2.io/scripts/replay_submit.php", {
+			headers: {'Access-Control-Allow-Origin': '*'},
 			version: game.version,
 			replaydata: f1056v6,
 			mapid: gameSettings.map.m.dbid,
@@ -29143,6 +29179,7 @@ game.friendNameToID = function(username) {
 };
 game.updateFriends = function(token) {
 	$.post("https://bonk2.io/scripts/friends.php", {
+		headers: {'Access-Control-Allow-Origin': '*'},
 		token: token,
 		task: "getfriends"
 	}).done(f1099a0 => {
@@ -29365,7 +29402,7 @@ $(document).ready(function() {
 	new Maps;
 	Maps.generateRandomOrder()
 });
-$.post("https://bonk2.io/scripts/matchmaking_maps.php").done(e => {
+$.post("https://bonk2.io/scripts/matchmaking_maps.php", {headers: {'Access-Control-Allow-Origin': '*'}} ).done(e => {
 	if (e.r == "success") {
 		for (let i = 0; i < e.t1.length; i++) {
 			Maps.trainingOneStrings.push("2," + e.t1[i].name + "," + e.t1[i].authorname + "," + e.t1[i].id + "," + e.t1[i].leveldata)

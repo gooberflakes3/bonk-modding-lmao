@@ -67,7 +67,8 @@
 
 				fetch('https://bonk2.io/scripts/autojoin.php', {
 					method: 'POST',
-					headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+					headers: {'Content-Type': 'application/x-www-form-urlencoded',
+							  'Access-Control-Allow-Origin': '*'},
 					body: data.toString(),
 				})
 				.then(response => response.json())
