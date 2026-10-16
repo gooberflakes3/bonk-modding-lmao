@@ -29349,19 +29349,13 @@ game.resizeGame = function() {
 		newHeight = newWidth / 2 // 1.46
 	}
 	const pageFrame = parent.document.getElementById("maingameframe");
-	const pageLeftAd = parent.document.getElementById("adboxverticalleftCurse");
-	const pageRightAd = parent.document.getElementById("adboxverticalCurse");
 	const heightDiff_ = getPageHeight() - newHeight;
 	const heightDiff = heightDiff_ / 2;
 	if (heightDiff < 170) {
 		const topOffset = 170 - heightDiff;
 		pageFrame.style.marginTop = topOffset + "px";
-		pageLeftAd.style.top = topOffset * 2 + "px";
-		pageRightAd.style.top = topOffset * 2 + "px"
 	} else {
 		pageFrame.style.marginTop = "0px";
-		pageLeftAd.style.top = "0px";
-		pageRightAd.style.top = "0px"
 	}
 	game.zoom = 1;
 	const adjustedWidth = newWidth / game.zoom - 24;
