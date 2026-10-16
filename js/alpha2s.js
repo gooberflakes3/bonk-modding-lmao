@@ -29394,6 +29394,7 @@ game.setAr = function(on) {
 	} catch (err) {}
 };
 $(document).ready(function() {
+	alert("alpha2s loaded!")
 	game.simpleFPS = new FPS(document.body, 1);
 	ThumbMaker();
 	game.resizeGame();
