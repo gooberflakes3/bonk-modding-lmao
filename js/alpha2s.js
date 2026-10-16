@@ -2525,7 +2525,7 @@ function RoomList() {
 			headers: {'Access-Control-Allow-Origin': '*'},
 			version: game.version,
 			gl: gl,
-			token: currentToken
+			token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjEzMzY3NzYwLCJ1aXAiOiI5OC4xMS4yMDEuNjkiLCJ1biI6ImJvaW5reWJvcHBlciIsImV2Ijp0cnVlLCJsdiI6NTAsImV4cCI6MTc5MjI3MTM1NiwiZyI6ImIifQ.hsjMHOqkHShgeYlpKBk8mOelM3ZXaQ8-0ugTiHkeZ6M"// currentToken
 		}).done(function(e) {
 			game.deactivateButtonSpinner(el_roomlistrefreshbutton);
 			const res = e;
@@ -29388,8 +29388,6 @@ game.setAr = function(on) {
 	} catch (err) {}
 };
 $(document).ready(function() {
-	try {
-	alert("alpha2s loaded!")
 	game.simpleFPS = new FPS(document.body, 1);
 	ThumbMaker();
 	game.resizeGame();
@@ -29397,7 +29395,6 @@ $(document).ready(function() {
 	mainMenu.showGuestOrAccount();
 	new Maps;
 	Maps.generateRandomOrder()
-	} catch (error) { alert(error) }
 });
 $.post("https://bonk2.io/scripts/matchmaking_maps.php", {headers: {'Access-Control-Allow-Origin': '*'}} ).done(e => {
 	if (e.r == "success") {
