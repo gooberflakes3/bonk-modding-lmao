@@ -12,7 +12,4 @@ all credit goes to him
 
 
 
-fix how the js doesnt load on the main page but does on the lower page for some reason????
-proposal to marge the gameframe into the main document...
-
-nvm it does load. so whys it broken??
+ong i got no clue whats wrong with it
