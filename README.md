@@ -12,6 +12,5 @@ all credit goes to him
 
 
 
-fix it
-
-Loading failed for the <script> with source “https://gooberflakes3.github.io/js/Tween.js”.
+fix how the js doesnt load on the main page but does on the lower page for some reason????
+proposal to marge the gameframe into the main document...
