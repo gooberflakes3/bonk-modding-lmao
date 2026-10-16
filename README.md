@@ -12,4 +12,4 @@ all credit goes to him
 
 
 
-ong i got no clue whats wrong with it
+ok for the internet i need to do some certificate shi

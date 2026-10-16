@@ -2525,7 +2525,7 @@ function RoomList() {
 			headers: {'Access-Control-Allow-Origin': '*'},
 			version: game.version,
 			gl: gl,
-			token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjEzMzY3NzYwLCJ1aXAiOiI5OC4xMS4yMDEuNjkiLCJ1biI6ImJvaW5reWJvcHBlciIsImV2Ijp0cnVlLCJsdiI6NTAsImV4cCI6MTc5MjI3MTM1NiwiZyI6ImIifQ.hsjMHOqkHShgeYlpKBk8mOelM3ZXaQ8-0ugTiHkeZ6M"// currentToken
+			token: currentToken
 		}).done(function(e) {
 			game.deactivateButtonSpinner(el_roomlistrefreshbutton);
 			const res = e;
